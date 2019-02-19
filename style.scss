@@ -1,0 +1,37 @@
+html,body{
+  background: #F3D9DC;
+  height: 100%;
+}
+
+.hidden{
+  display: none;
+}
+
+.box {
+  background-color: #88ce02;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.container{
+  border: 1px solid lavender;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-flow: column;
+  align-content: center;
+  justify-content: space-around;
+}
+
+#magic-blob{
+  cursor: pointer;
+  border: 1px solid #CCADBD;
+
+
+  #star-mix{
+
+  }
+}
