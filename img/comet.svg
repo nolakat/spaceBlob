@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 108.53 105.7">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1138.79" y1="932.83" x2="1076.48" y2="997.02" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2" stop-color="#e2bdee"/>
+      <stop offset="0.41" stop-color="#c47ade"/>
+      <stop offset="0.61" stop-color="#ad46d0"/>
+      <stop offset="0.78" stop-color="#9c20c7"/>
+      <stop offset="0.91" stop-color="#9209c1"/>
+      <stop offset="1" stop-color="#8e00bf"/>
+    </linearGradient>
+  </defs>
+  <title>Untitled-7</title>
+  <path d="M1148.93,930.35l-7.57-5.76a11.48,11.48,0,0,0-14.39.4l-66.11,56.32c-.16.13-16.41,13.26-15.82,24a24.09,24.09,0,0,0,21.89,22.57c10,.84,23.27-12.65,23.27-12.65l60.39-67.82A11.69,11.69,0,0,0,1148.93,930.35Z" transform="translate(-1045.02 -922.25)" style="fill: url(#linear-gradient)"/>
+  <path d="M1062,985.05c-3.56,2.54-6.72,5.35-8.76,9.52a21.77,21.77,0,0,0-1.85,5.43c-1.57,7.91,1.31,19,9.33,22.43,11.23,4.89,21.44-4.91,28.2-12.6,8-9.12,14.67-19.2,22.29-28.6,7.48-9.23,14.43-19,21.26-28.74,2.74-3.91,5.47-7.83,8-11.91.49-.81,3.27-4.5,2.55-5.58-2.14-3.21-32,17.6-34.43,19.18-9.73,6.34-19.39,12.79-29,19.22q-7.11,4.73-14.21,9.42C1064.19,983.56,1063.09,984.29,1062,985.05Z" transform="translate(-1045.02 -922.25)" style="fill: #ea3281"/>
+  <circle cx="23.98" cy="81.75" r="16" style="fill: #fedc01"/>
+</svg>

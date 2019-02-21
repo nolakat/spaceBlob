@@ -17,6 +17,7 @@ html,body{
 .container{
   border: 1px solid lavender;
   display: flex;
+  position: relative;
   height: 100%;
   width: 100%;
   max-width: 800px;
@@ -29,9 +30,44 @@ html,body{
 #magic-blob{
   cursor: pointer;
   border: 1px solid #CCADBD;
+  position: absolute;
+}
 
+#parallax-container{
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
 
-  #star-mix{
+  #scene{
+    .block{
+      width: 400px;
+      height: 400px;
 
+      &.one{
+        bottom:100px;
+      }
+      &.two{
+        bottom: 0px;
+
+      }
+      .moon{
+        height: 100px;
+        width: 100px;
+        position: relative;
+        top: 280px;
+
+        img{
+          transform: scale(2);
+        }
+      }
+      .planet{
+        height:100px;
+        width: 100px;
+        position: relative;
+        left: 100px;
+        top: 220px;
+      }
+    }
   }
 }

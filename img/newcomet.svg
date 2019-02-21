@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124.75 119.51">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1158.58" y1="915.88" x2="1073.26" y2="1003.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.11" stop-color="#faf5fc" stop-opacity="0.04"/>
+      <stop offset="0.27" stop-color="#eed8f5" stop-opacity="0.15"/>
+      <stop offset="0.46" stop-color="#d9a9e9" stop-opacity="0.34"/>
+      <stop offset="0.69" stop-color="#bc68d9" stop-opacity="0.59"/>
+      <stop offset="0.94" stop-color="#9816c5" stop-opacity="0.91"/>
+      <stop offset="1" stop-color="#8e00bf"/>
+    </linearGradient>
+  </defs>
+  <title>newcomet</title>
+  <path d="M1157,910l-90,73c-.15.13-15.23,12.36-17,23-2,12,7.32,24,19,22,12-2,23-16,23-16l81-89C1179.49,915.71,1162.91,905,1157,910Z" transform="translate(-1049.73 -908.7)" style="fill: url(#linear-gradient)"/>
+  <circle cx="18.27" cy="100.3" r="16" style="fill: #fedc01"/>
+</svg>
