@@ -13,183 +13,201 @@
 
 <body>
 
-  <div id="blob-box" class="container">
 
-      <svg version="1.1" id="magic-blob" x="0px" y="0px" viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
-        <defs>
-           <mask id="mask"  maskUnits="userSpaceOnUse">
+  <div class="MorphingBlob-container" style="margin:0 auto; width: 400px; height: 400px;">
+
+    <svg version="1.1" id="MorphingBlob" x="0px" y="0px" viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
+        
+      <defs>
+          <!-- Starting default masking path -->
+          <mask id="mask"  maskUnits="userSpaceOnUse">
               <path fill="#fff" d="M466,903.5c-50.3,0-93.7-10.6-128.8-31.6c-32.3-19.3-58.8-48-78.6-85.2c-33.7-63.2-50-153-50-274.7
-                c0-104,36.1-208.1,99-285.6c67-82.5,158.1-127.9,256.5-127.9c114.3,0,259.1,32.8,368.7,83.5c63.7,29.5,114.1,63.7,149.9,101.7
-                c40.4,43,60.9,89.8,60.9,139.2c0,49.6-25.6,104.6-76.2,163.6C1022.5,638.8,959,692.5,883.6,742C736.4,838.6,568.6,903.5,466,903.5z
-                " style="transform-origin: 0px 0px 0px;"/>
-                <!-- <path id="mask-02" class="hidden" d="M504,903.5c-102.2,0-180.1-30.3-231.5-89.9c-49.1-56.9-74-140.2-74-247.6c0-113.3,25.9-224.6,71-305.2
-                c25.6-45.7,56.9-81.4,93.1-106.2c39.8-27.3,85.3-41.1,135.4-41.1c96.6,0,260.7,17.3,405.2,66.1c112.8,38.1,247.3,107.7,247.3,223.4
-                c0,49.8-24,105.9-71.4,166.7c-42.3,54.4-102.1,110.5-173,162.3c-67.9,49.6-141.3,92.1-212.4,122.8
-                C620.2,886.7,554.6,903.5,504,903.5z" style="transform-origin: 0px 0px 0px;"/>
-                <path id="mask-03" class="hidden" d="M551,903.5c-52.2,0-99.4-7.1-140.3-21c-40.7-13.9-75.6-34.7-103.7-61.9c-28.2-27.4-49.9-61.4-64.3-101.3
-                c-14.7-40.4-22.1-87.3-22.1-139.2c0-54.6,5.6-108,16.6-158.7c11.9-54.4,29.5-102.9,52.4-144c25.1-45,55.9-80.2,91.7-104.5
-                c39.4-26.8,84.7-40.3,134.7-40.3c68.9,0,245.3,4.4,396.3,45.1c72.4,19.5,129.1,44.8,168.8,75.3c46.1,35.4,69.4,78.2,69.4,127.1
-                c0,49.3-22.2,108.3-64.1,170.4c-38.5,57.1-92.8,115.9-156.8,170.2c-62.6,53-130.5,98.2-196.3,130.7
-                C664.2,885.4,601.1,903.5,551,903.5z" style="transform-origin: 0px 0px 0px;"/>
-                <path id="mask-lg" class="hidden" d="M1239.5,509.1c37.5,187.7-55,234-507,397c-180,64.9-768,123-693-556c21-190.2,348-200,539-211 C925.5,119.1,1115.5-110.9,1239.5,509.1z"
-                /> -->
+              c0-104,36.1-208.1,99-285.6c67-82.5,158.1-127.9,256.5-127.9c114.3,0,259.1,32.8,368.7,83.5c63.7,29.5,114.1,63.7,149.9,101.7
+              c40.4,43,60.9,89.8,60.9,139.2c0,49.6-25.6,104.6-76.2,163.6C1022.5,638.8,959,692.5,883.6,742C736.4,838.6,568.6,903.5,466,903.5z
+              " style="transform-origin: 0px 0px 0px;"/>
           </mask>
-        </defs>
+      </defs>
 
-        <g id="space" mask="url(#mask)">
-          <rect height="20" width="100%" fill="url(#SPACEBG_1)"></rect>
-          <radialGradient id="SPACEBG_2" cx="50%" cy="0" r="100%">
+
+      <!-- 
+      //////    ** Blob Mask **
+      -->
+
+  <!-- Everything in this group will be msked by mask path -->
+  <g mask="url(#mask)">
+
+          <!-- Background for masking path -->
+          <radialGradient id="SPACEBG" cx="50%" cy="0" r="100%">
               <stop offset="0" style="stop-color: #181743"></stop>
               <stop offset=".35" style="stop-color: #542344"></stop>
               <stop offset=".65" style="stop-color: #653E77"></stop>
               <stop offset="1" style="stop-color: #54E1AC"></stop>
           </radialGradient>
-          <rect y="0" height="100%" width="100%" fill="url(#SPACEBG_2"></rect>
+          
+          <rect y="0" height="100%" width="100%" fill="url(#SPACEBG)"></rect>
 
-          <style type="text/css">
-          .stars{stroke:#fff;stroke-width: 10; stroke-linecap:round; stroke-miterlimit:10;}
-          </style>
+          <!--
+          /////     ** Everything Below are just Background Animations **
+          --> 
 
-<style type="text/css">
-.bigstar{fill:red;stroke:#fff;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
-.bigstar-circle{fill:#fff;}
-.star-glow{fill:#fff; opacity: .5;}
-</style>
+                  <!-- 
+                  //////    ** Stars **
+                  -->
+                  <style type="text/css">
+                  .stars{stroke:#fff;stroke-width: 10; stroke-linecap:round; stroke-miterlimit:10;}
+                  </style>
 
-<g id="big-star" style="transform: translate(420px, 435px)">
-<line class="bigstar" x1="29.5" y1="10" x2="29" y2="55"/>
-<line class="bigstar" x1="50" y1="32.5" x2="8" y2="32"/>
-<circle class="bigstar-circle" cx="29" cy="32.5" r="12.5"/>
-<circle class="star-glow" cx="29" cy="32.5" r="20" />
-</g>
-<use href="#big-star" x="1200" y="0" style="transform: scale(.5)"></use>
+                  <style type="text/css">
+                  .bigstar{fill:red;stroke:#fff;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
+                  .bigstar-circle{fill:#fff;}
+                  .star-glow{fill:#fff; opacity: .5;}
+                  </style>
 
-      <g id="star-mix" style="transform: scale(1.5) translate(250px, 100px);">
-        <style type="text/css">
-        .st0{fill:#FFFFFF;stroke-miterlimit:10;}
-        .st1{stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-        .st2{fill: hotpink; stroke:purple; stroke-linecap:round;stroke-miterlimit:10;}
-        </style>
+                  <g id="big-star" style="transform: translate(420px, 435px)">
+                  <line class="bigstar" x1="29.5" y1="10" x2="29" y2="55"/>
+                  <line class="bigstar" x1="50" y1="32.5" x2="8" y2="32"/>
+                  <circle class="bigstar-circle" cx="29" cy="32.5" r="12.5"/>
+                  <circle class="star-glow" cx="29" cy="32.5" r="20" />
+                  </g>
+                  <use href="#big-star" x="1200" y="0" style="transform: scale(.5)"></use>
 
-        <circle class="st0 blink" cx="59.2" cy="132.3" r="1.7"/>
-        <circle class="st0" cx="69" cy="138.9" r="1"/>
-        <circle class="st0 blink" cx="64" cy="142.9" r="2"/>
-        <circle class="st0" cx="52" cy="138.9" r="1"/>
-        <circle class="st0" cx="34" cy="147.9" r="2"/>
-        <circle class="st0" cx="76.1" cy="101.7" r="1.7"/>
-        <circle class="st0" cx="78.5" cy="123.2" r="1"/>
-        <circle class="st0 blink" cx="72.2" cy="122.6" r="2"/>
-        <circle class="st0" cx="66.3" cy="111.4" r="1"/>
-        <circle class="st0" cx="61.5" cy="119.3" r="2"/>
-        <circle class="st0" cx="54.1" cy="80.7" r="1.7"/>
-        <circle class="st0 blink" cx="63.6" cy="55.3" r="1"/>
-        <circle class="st0" cx="68.1" cy="50.7" r="2"/>
-        <circle class="st0 blink" cx="80.5" cy="53.2" r="1"/>
-        <circle class="st0" cx="77.4" cy="44.5" r="2"/>
-        <circle class="st0" cx="22.9" cy="115.2" r="1.7"/>
-        <circle class="st0 blink" cx="1.5" cy="135.4" r="1"/>
-        <circle class="st0" cx="14.8" cy="106.9" r="2"/>
-        <circle class="st0" cx="27.4" cy="106.5" r="1"/>
-        <circle class="st0" cx="42.4" cy="98.8" r="2"/>
-        <circle class="st0 blink" cx="113.8" cy="57.7" r="1.7"/>
-        <circle class="st0" cx="109.1" cy="68.5" r="1"/>
-        <circle class="st0" cx="104.2" cy="64.3" r="2"/>
-        <circle class="st0 blink" cx="106" cy="51.8" r="1"/>
-        <circle class="st0" cx="125.7" cy="68.7" r="2"/>
-        <circle class="st0 blink" cx="135.6" cy="60.9" r="1"/>
-        <circle class="st0 blink" cx="127" cy="57.6" r="2"/>
-        <circle class="st0" cx="163.7" cy="43.3" r="1.7"/>
-        <circle class="st0" cx="190.4" cy="48" r="1"/>
-        <circle class="st0 blink" cx="195.7" cy="51.6" r="2"/>
-        <circle class="st0" cx="195.5" cy="64.3" r="1"/>
-        <circle class="st0" cx="203.5" cy="59.7" r="2"/>
-        <circle class="st0" cx="124" cy="18.9" r="1.7"/>
-        <circle class="st0" cx="100.3" cy="1.5" r="1"/>
-        <circle class="st0" cx="130.7" cy="9.4" r="2"/>
-        <circle class="st0" cx="133.5" cy="21.8" r="1"/>
-        <circle class="st0" cx="143.8" cy="35.1" r="2"/>
-      </g>
+                  <g id="star-mix" style="transform: scale(1.5) translate(250px, 100px);">
+                  <style type="text/css">
+                  .st0{fill:#FFFFFF;stroke-miterlimit:10;}
+                  .st1{stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+                  .st2{fill: hotpink; stroke:purple; stroke-linecap:round;stroke-miterlimit:10;}
+                  </style>
 
-      <g id="star-mix" style="transform: scale(1.2) translate(800px, 400px) rotate(120deg);">
-          <style type="text/css">
-          .st0{fill:#FFFFFF;stroke-miterlimit:10;}
-          .st1{stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-          .st2{fill: purple; opacity: 0.5; stroke: transparent; stroke-linecap:round;stroke-miterlimit:10;}
-          </style>
+                  <circle class="st0 blink" cx="59.2" cy="132.3" r="1.7"/>
+                  <circle class="st0" cx="69" cy="138.9" r="1"/>
+                  <circle class="st0 blink" cx="64" cy="142.9" r="2"/>
+                  <circle class="st0" cx="52" cy="138.9" r="1"/>
+                  <circle class="st0" cx="34" cy="147.9" r="2"/>
+                  <circle class="st0" cx="76.1" cy="101.7" r="1.7"/>
+                  <circle class="st0" cx="78.5" cy="123.2" r="1"/>
+                  <circle class="st0 blink" cx="72.2" cy="122.6" r="2"/>
+                  <circle class="st0" cx="66.3" cy="111.4" r="1"/>
+                  <circle class="st0" cx="61.5" cy="119.3" r="2"/>
+                  <circle class="st0" cx="54.1" cy="80.7" r="1.7"/>
+                  <circle class="st0 blink" cx="63.6" cy="55.3" r="1"/>
+                  <circle class="st0" cx="68.1" cy="50.7" r="2"/>
+                  <circle class="st0 blink" cx="80.5" cy="53.2" r="1"/>
+                  <circle class="st0" cx="77.4" cy="44.5" r="2"/>
+                  <circle class="st0" cx="22.9" cy="115.2" r="1.7"/>
+                  <circle class="st0 blink" cx="1.5" cy="135.4" r="1"/>
+                  <circle class="st0" cx="14.8" cy="106.9" r="2"/>
+                  <circle class="st0" cx="27.4" cy="106.5" r="1"/>
+                  <circle class="st0" cx="42.4" cy="98.8" r="2"/>
+                  <circle class="st0 blink" cx="113.8" cy="57.7" r="1.7"/>
+                  <circle class="st0" cx="109.1" cy="68.5" r="1"/>
+                  <circle class="st0" cx="104.2" cy="64.3" r="2"/>
+                  <circle class="st0 blink" cx="106" cy="51.8" r="1"/>
+                  <circle class="st0" cx="125.7" cy="68.7" r="2"/>
+                  <circle class="st0 blink" cx="135.6" cy="60.9" r="1"/>
+                  <circle class="st0 blink" cx="127" cy="57.6" r="2"/>
+                  <circle class="st0" cx="163.7" cy="43.3" r="1.7"/>
+                  <circle class="st0" cx="190.4" cy="48" r="1"/>
+                  <circle class="st0 blink" cx="195.7" cy="51.6" r="2"/>
+                  <circle class="st0" cx="195.5" cy="64.3" r="1"/>
+                  <circle class="st0" cx="203.5" cy="59.7" r="2"/>
+                  <circle class="st0" cx="124" cy="18.9" r="1.7"/>
+                  <circle class="st0" cx="100.3" cy="1.5" r="1"/>
+                  <circle class="st0" cx="130.7" cy="9.4" r="2"/>
+                  <circle class="st0" cx="133.5" cy="21.8" r="1"/>
+                  <circle class="st0" cx="143.8" cy="35.1" r="2"/>
+                  </g>
 
-          <circle class="st0 blink" cx="59.2" cy="132.3" r="1.7"/>
-          <circle class="st0" cx="69" cy="138.9" r="1"/>
-          <circle class="st0 blink" cx="64" cy="142.9" r="2"/>
-          <circle class="st0" cx="52" cy="138.9" r="1"/>
-          <circle class="st0" cx="34" cy="147.9" r="2"/>
-          <circle class="st0" cx="54.1" cy="80.7" r="1.7"/>
-          <circle class="st0 blink" cx="63.6" cy="55.3" r="1"/>
-          <circle class="st0" cx="68.1" cy="50.7" r="2"/>
-          <circle class="st0 blink" cx="80.5" cy="53.2" r="1"/>
-          <circle class="st0" cx="77.4" cy="44.5" r="2"/>
-          <circle class="st0" cx="22.9" cy="115.2" r="1.7"/>
-          <circle class="st0 blink" cx="1.5" cy="135.4" r="1"/>
-          <circle class="st0" cx="14.8" cy="106.9" r="2"/>
-          <circle class="st0" cx="27.4" cy="106.5" r="1"/>
-          <circle class="st0" cx="42.4" cy="98.8" r="2"/>
-          <circle class="st0 blink" cx="113.8" cy="57.7" r="1.7"/>
-          <circle class="st0" cx="109.1" cy="68.5" r="1"/>
-          <circle class="st0" cx="104.2" cy="64.3" r="2"/>
-          <circle class="st0 blink" cx="106" cy="51.8" r="1"/>
-          <circle class="st0" cx="93.9" cy="35.7" r="2"/>
-          <circle class="st0" cx="147" cy="68.7" r="1.7"/>
-          <circle class="st0" cx="126.3" cy="75" r="1"/>
-          <circle class="st0" cx="125.7" cy="68.7" r="2"/>
-          <circle class="st0 blink" cx="135.6" cy="60.9" r="1"/>
-          <circle class="st0 blink" cx="127" cy="57.6" r="2"/>
-          <circle class="st0" cx="163.7" cy="43.3" r="1.7"/>
-          <circle class="st0" cx="190.4" cy="48" r="1"/>
-          <circle class="st0 blink" cx="195.7" cy="51.6" r="2"/>
-          <circle class="st0" cx="195.5" cy="64.3" r="1"/>
-          <circle class="st0" cx="203.5" cy="59.7" r="2"/>
-          <circle class="st0" cx="124" cy="18.9" r="1.7"/>
-          <circle class="st0" cx="100.3" cy="1.5" r="1"/>
-          <circle class="st0" cx="130.7" cy="9.4" r="2"/>
-          <circle class="st0" cx="133.5" cy="21.8" r="1"/>
-          <circle class="st0" cx="143.8" cy="35.1" r="2"/>
-        </g>
+                  <g id="star-mix" style="transform: scale(1.2) translate(800px, 400px) rotate(120deg);">
+                      <style type="text/css">
+                      .st0{fill:#FFFFFF;stroke-miterlimit:10;}
+                      .st1{stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+                      .st2{fill: purple; opacity: 0.5; stroke: transparent; stroke-linecap:round;stroke-miterlimit:10;}
+                      </style>
 
-        <use href="#star-mix" x="600" y="0" style="transform: scale(.75)"></use>
-        <use href="#star-mix" x="0" y="400" style="transform: scale(1)"></use>
+                      <circle class="st0 blink" cx="59.2" cy="132.3" r="1.7"/>
+                      <circle class="st0" cx="69" cy="138.9" r="1"/>
+                      <circle class="st0 blink" cx="64" cy="142.9" r="2"/>
+                      <circle class="st0" cx="52" cy="138.9" r="1"/>
+                      <circle class="st0" cx="34" cy="147.9" r="2"/>
+                      <circle class="st0" cx="54.1" cy="80.7" r="1.7"/>
+                      <circle class="st0 blink" cx="63.6" cy="55.3" r="1"/>
+                      <circle class="st0" cx="68.1" cy="50.7" r="2"/>
+                      <circle class="st0 blink" cx="80.5" cy="53.2" r="1"/>
+                      <circle class="st0" cx="77.4" cy="44.5" r="2"/>
+                      <circle class="st0" cx="22.9" cy="115.2" r="1.7"/>
+                      <circle class="st0 blink" cx="1.5" cy="135.4" r="1"/>
+                      <circle class="st0" cx="14.8" cy="106.9" r="2"/>
+                      <circle class="st0" cx="27.4" cy="106.5" r="1"/>
+                      <circle class="st0" cx="42.4" cy="98.8" r="2"/>
+                      <circle class="st0 blink" cx="113.8" cy="57.7" r="1.7"/>
+                      <circle class="st0" cx="109.1" cy="68.5" r="1"/>
+                      <circle class="st0" cx="104.2" cy="64.3" r="2"/>
+                      <circle class="st0 blink" cx="106" cy="51.8" r="1"/>
+                      <circle class="st0" cx="93.9" cy="35.7" r="2"/>
+                      <circle class="st0" cx="147" cy="68.7" r="1.7"/>
+                      <circle class="st0" cx="126.3" cy="75" r="1"/>
+                      <circle class="st0" cx="125.7" cy="68.7" r="2"/>
+                      <circle class="st0 blink" cx="135.6" cy="60.9" r="1"/>
+                      <circle class="st0 blink" cx="127" cy="57.6" r="2"/>
+                      <circle class="st0" cx="163.7" cy="43.3" r="1.7"/>
+                      <circle class="st0" cx="190.4" cy="48" r="1"/>
+                      <circle class="st0 blink" cx="195.7" cy="51.6" r="2"/>
+                      <circle class="st0" cx="195.5" cy="64.3" r="1"/>
+                      <circle class="st0" cx="203.5" cy="59.7" r="2"/>
+                      <circle class="st0" cx="124" cy="18.9" r="1.7"/>
+                      <circle class="st0" cx="100.3" cy="1.5" r="1"/>
+                      <circle class="st0" cx="130.7" cy="9.4" r="2"/>
+                      <circle class="st0" cx="133.5" cy="21.8" r="1"/>
+                      <circle class="st0" cx="143.8" cy="35.1" r="2"/>
+                  </g>
 
-        <defs>
-            <linearGradient id="linear-gradient" x1="1158.58" y1="915.88" x2="1073.26" y2="1003.77" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-              <stop offset="0.11" stop-color="#8e00bf" stop-opacity="0"/>
-              <stop offset="0.27" stop-color="#8e00bf" stop-opacity="0.05"/>
-              <stop offset="0.46" stop-color="#8e00bf" stop-opacity="0.24"/>
-              <stop offset="0.69" stop-color="#8e00bf" stop-opacity="0.59"/>
-              <stop offset="0.94" stop-color="#8e00bf" stop-opacity="0.91"/>
-              <stop offset="1" stop-color="#8e00bf"/>
-            </linearGradient>
-          </defs>
-          <g id="comet" style="transform: rotate(250deg) translate(0px, 0px)">
-            <path d="M1157,910l-90,73c-.15.13-15.23,12.36-17,23-2,12,7.32,24,19,22,12-2,23-16,23-16l81-89C1179.49,915.71,1162.91,905,1157,910Z" transform="translate(-1049.73 -908.7)" style="fill: url(#linear-gradient)"/>
-            <circle cx="18.27" cy="100.3" r="16" style="fill: #fedc01"/>
-          </g>
+                  <use href="#star-mix" x="600" y="0" style="transform: scale(.75)"></use>
+                  <use href="#star-mix" x="0" y="400" style="transform: scale(1)"></use>
 
-</g>
-      </svg>
 
-    <div id="parallax-container">
-      <div id="scene">
-          <div class="block one" data-depth="0.2">
-            <div class="planet">
-              <img src="img/tinyplanet.svg">
-            </div>
+              <!-- 
+              //////    ** Comet **
+              -->
+
+              <defs>
+                  <linearGradient id="linear-gradient" x1="1158.58" y1="915.88" x2="1073.26" y2="1003.77" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                      <stop offset="0.11" stop-color="#8e00bf" stop-opacity="0"/>
+                      <stop offset="0.27" stop-color="#8e00bf" stop-opacity="0.05"/>
+                      <stop offset="0.46" stop-color="#8e00bf" stop-opacity="0.24"/>
+                      <stop offset="0.69" stop-color="#8e00bf" stop-opacity="0.59"/>
+                      <stop offset="0.94" stop-color="#8e00bf" stop-opacity="0.91"/>
+                      <stop offset="1" stop-color="#8e00bf"/>
+                  </linearGradient>
+                  </defs>
+
+                  <g id="comet" style="transform: rotate(250deg) translate(0px, 0px)">
+                      <path d="M1157,910l-90,73c-.15.13-15.23,12.36-17,23-2,12,7.32,24,19,22,12-2,23-16,23-16l81-89C1179.49,915.71,1162.91,905,1157,910Z" transform="translate(-1049.73 -908.7)" style="fill: url(#linear-gradient)"/>
+                      <circle cx="18.27" cy="100.3" r="16" style="fill: #fedc01"/>
+                  </g>
+              <!-- end background animations --> 
+
+      </g> <!-- end of masking path group -->
+</svg>
+
+<!-- @todo position/container size styling & data-depth attribute can be added dynamically? -->
+<div id="parallax-container">
+  <div id="parallax-scene">  
+
+      <div class="parallax-panel" data-depth="0.2">
+          <div class="parallax-panel--inner"  style="top: 220px; left: 100px;">
+              <img src="./img/tinyplanet.svg">
           </div>
-          <div class="block two" data-depth="0.8">
-              <div class="moon">
-                <img src="img/newplanet.svg">
-              </div>
+      </div>
+
+      <div class="parallax-panel" data-depth="0.8">
+          <div class="parallax-panel--inner" style="top: 280px;">
+              <img src="./img/newplanet.svg" style="transform: scale(3);">
           </div>
-        </div>
-    </div>
+      </div>
+
+  </div>
+</div>
 
 
 
