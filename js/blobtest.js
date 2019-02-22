@@ -76,7 +76,7 @@ jQuery(function($){
                     
                     e.to(maskPath, this.morphBlob[i].duration, {
                         morphSVG: this.morphBlob[i].path,
-                        ease: Power0.easeNone
+                        ease: this.morphi[i].easing
 
                     });
             }
